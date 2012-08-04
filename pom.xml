@@ -9,13 +9,13 @@
     </prerequisites>
 
     <groupId>com.codahale</groupId>
-    <artifactId>jerkson_2.9.1</artifactId>
+    <artifactId>jerkson_2.9.2</artifactId>
     <version>0.6.0-SNAPSHOT</version>
-    <name>Jerkson for Scala</name>
+    <name>Jerkson for Scala ${scala.version}</name>
 
     <properties>
-        <scala.version>2.9.1</scala.version>
-        <jackson.version>2.0.2</jackson.version>
+        <scala.version>2.9.2</scala.version>
+        <jackson.version>2.0.5</jackson.version>
     </properties>
 
     <developers>
@@ -36,6 +36,14 @@
 
     <repositories>
         <repository>
+            <id>OSS SonaType Scala-Tools</id>
+            <url>https://oss.sonatype.org/content/groups/scala-tools/</url>
+        </repository>
+        <repository>
+            <id>OSS SonaType Releases</id>
+            <url>https://oss.sonatype.org/content/repositories/releases</url>
+        </repository>
+        <repository>
             <id>repo.codahale.com</id>
             <url>http://repo.codahale.com</url>
         </repository>
@@ -43,12 +51,31 @@
             <id>nativelibs4java</id>
             <url>http://nativelibs4java.sourceforge.net/maven</url>
         </repository>
+        <repository>
+            <id>Scala.sh Releases</id>
+            <url>http://scala.sh/repositories/releases</url>
+        </repository>
     </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>OSS SontaType Scala-Tools</id>
+            <url>https://oss.sonatype.org/content/groups/scala-tools/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>OSS SonaType Releases</id>
+            <url>https://oss.sonatype.org/content/repositories/releases</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>Scala.sh Releases</id>
+            <url>http://scala.sh/repositories/releases</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <distributionManagement>
         <repository>
-            <id>repo.codahale.com</id>
-            <url>scp://codahale.com/home/codahale/repo.codahale.com</url>
+            <id>scala.sh</id>
+            <url>scp://ppx@scala.sh/var/www/scala.sh/public_html/repositories/snapshots</url>
         </repository>
     </distributionManagement>
 
@@ -65,13 +92,18 @@
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.codahale</groupId>
+            <groupId>com.simple</groupId>
             <artifactId>simplespec_${scala.version}</artifactId>
-            <version>0.5.2</version>
+            <version>0.6.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
